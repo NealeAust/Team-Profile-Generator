@@ -1,1 +1,47 @@
+* {
+    box-sizing: border-box
+}
 
+    header{
+    display: flex;
+    justify-content: center;
+}
+
+.navbar{
+    background-color: #060680;
+    height: 80px;
+    margin: 40px;
+    color: white;
+    text-shadow: 2px 2px #99cdea;
+    Width: 76%;
+    height:100px;
+   
+}
+
+.container{
+    display:flex;
+}
+.card{
+    display:inline-block;
+    flex-wrap: wrap;
+    width: 400px;
+    margin:10px 10px;
+ 
+}
+.card-header{
+background-color: #4857c8;
+color: white;
+
+}
+
+.card-body{
+height:160px;
+}
+
+li{
+height:40px;    
+}
+
+.list-group-item{
+color: #060680;
+}
