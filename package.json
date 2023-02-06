@@ -1,6 +1,26 @@
 {
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose tests/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NealeAust/Team-Profile-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NealeAust/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/NealeAust/Team-Profile-Generator#readme",
   "dependencies": {
-    "fs": "^0.0.1-security",
     "inquirer": "^8.2.4",
     "jest": "^29.4.1"
   }

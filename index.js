@@ -4,6 +4,7 @@ const fs = require("fs");
 const generateHTML = require("./src/generateHTML");
 
 // Employee profiles
+const Employee = require('./lib/Employee');
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -11,7 +12,7 @@ const Intern = require("./lib/Intern");
 // Creating empty array to store user input
 const teamMembers = [];
 
-const addManager = () => {
+function addManager() {
     inquirer.prompt([
         {
             type: "input",
@@ -152,7 +153,7 @@ const addEmployee = () => {
         {
             type: "confirm",
             name: "addEmployee",
-            message: 'Would you like to add another Employee?',
+            message: "Would you like to add another Employee?",
         }
     ])
 
@@ -183,8 +184,7 @@ const addEmployee = () => {
 
 const writeToFile = data => {
     fs.writeToFile('./dist/index.html', data, err => {
-        // If there is an error 
-        if (err) {
+           if (err) {
             console.log(err);
             return;
            
