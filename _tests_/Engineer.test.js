@@ -1,6 +1,6 @@
 const Engineer = require ("../lib/Engineer");
 
-const employeeTest = new Engineer("Neale Chapman", 3, "nealechapman@optushome.com.au", "Engineer");
+const employeeTest = new Engineer("nealechapman", 3, "nealechapman@optushome.com.au", "Engineer");
 
 describe("Engineer details", () => {
     it("Engineer's name", () => {
@@ -8,7 +8,7 @@ describe("Engineer details", () => {
         expect(employeeTest.name.length).toBeGreaterThan(2)
     })
 
-     it("Engineer's id that is a num", () => {
+     it("Engineer's id that is a number", () => {
         expect(employeeTest.id).toEqual(expect.any(Number))
     })
 

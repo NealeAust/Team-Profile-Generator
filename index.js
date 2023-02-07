@@ -32,7 +32,7 @@ function addManager() {
             name: "id",
             message: "Please enter Manager's ID.",
             validate: idInput => {
-                if (isNAN(idInput)) {
+                if (isNaN(idInput)) {
                     return "Please enter the Manager's ID!"
                 } else {
                     return true;
@@ -61,8 +61,8 @@ function addManager() {
             name: "officeNumber",
             message: "Please enter the Manager's Office Number.",
             validate: officeInput => {
-                if (isNAN(officeInput)) {
-                    return "Please enter the Manager's Office Number!"
+                if (isNaN(officeInput)) {
+                    return "The Manager's Office Number must be a number!"
                 } else {
                     return true;
                 }
@@ -73,13 +73,12 @@ function addManager() {
         .then(managerInput => {
             const { name, id, email, officeNumber } = managerInput;
             const manager = new Manager(name, id, email, officeNumber);
-
             teamMembers.push(manager);
             console.log(manager);
         })
 };
 
-const addEmployee = () => {
+function addEmployee(){
     return inquirer.prompt([
         {
             type: "list",
@@ -105,7 +104,7 @@ const addEmployee = () => {
             message: "Please enter the Employee's ID.",
             validate: idInput => {
                 if (isNaN(idInput)) {
-                    return "Please enter the Employee's ID!"
+                    return "Employee's ID must be a number!"
                 } else {
                     return true;
                 }
@@ -120,7 +119,7 @@ const addEmployee = () => {
                 if (valid) {
                     return true;
                 } else {
-                    return 'Please enter an email!'
+                    return 'Please check email and enter again!'
                 }
             }
         },
@@ -180,10 +179,10 @@ const addEmployee = () => {
                 return teamMembers;
             }
         })
-};
 
-const writeToFile = data => {
-    fs.writeToFile('./dist/index.html', data, err => {
+
+function writeToFile (data) {
+    fs.writeToFile("./dist/index.html", data, err => {
            if (err) {
             console.log(err);
             return;
@@ -191,18 +190,21 @@ const writeToFile = data => {
         } else {
             return "Your team profile has been successfully created! Please check out the index.html"
         }
-    })
+        
+    })   
+
+
 };
-
+}
 addManager()
-    .then(addEmployee)
-    .then(teamMembers => {
-        return generateHTML(teamMembers);
-    })
-    .then(createHTML => {
-        return writeToFile(createHTML);
-    })
-    .catch(err => {
-        console.log(err);
+    // // .then(addEmployee)
+    // // .then(teamMembers => {
+    // //     return generateHTML(teamMembers);
+    // // })
+    // // .then(createHTML => {
+    // //     return writeToFile(createHTML);
+    // // })
+    // // .catch(err => {
+    // //     console.log(err);
 
-    });    
+
