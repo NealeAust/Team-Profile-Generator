@@ -1,4 +1,4 @@
-// Create Manager card
+// Create a Manager card
 const generateManager = function (manager) {
     return `
 <div class="card employee-card">
@@ -18,7 +18,7 @@ const generateManager = function (manager) {
 `;
 }
 
-// Create Engineer card
+// Create an Engineer card
 const generateEngineer = function (engineer) {
     return `
 <div class="card employee-card">
@@ -38,7 +38,7 @@ const generateEngineer = function (engineer) {
 `
 }
 
-// Create Intern card
+// Create an Intern card
 const generateIntern = function (intern) {
     return `
 
@@ -67,20 +67,22 @@ function generateHTML(data) {
         const employee = data[i];
         const role = employee.getRole();
 
-        if (role === 'Manager') {
+        // Call Manager/Engineer/Intern functions
+     
+        if (role === "Manager") {
             const managerCard = generateManager(employee);
 
             cardArray.push(managerCard);
         }
-
-        if (role === 'Engineer') {
+       
+        if (role === "Engineer") {
             const engineerCard = generateEngineer(employee);
 
             cardArray.push(engineerCard);
         }
 
-        // call intern function 
-        if (role === 'Intern') {
+         
+        if (role === "Intern") {
             const internCard = generateIntern(employee);
 
             cardArray.push(internCard);
@@ -88,16 +90,13 @@ function generateHTML(data) {
 
     }
 
-    // joining strings 
-    const employeeCards = cardArray.join('')
-
-    // return to generated page
+    const employeeCards = cardArray.join("")
+   
     const generateTeam = generateTeamPage(employeeCards);
     return generateTeam;
-
 }
 
-// generate html page 
+// Generates html page 
 const generateTeamPage = function (employeeCards) {
     return `
   <!DOCTYPE html>
@@ -112,7 +111,7 @@ const generateTeamPage = function (employeeCards) {
       <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
       <link rel="stylesheet" href="style.css" />
       <title>Team Profile Generator</title>
-      <!-- <link rel="icon" href="./assets/image/weatherlogo.png" type="image/x-icon">	 -->
+      <link rel="icon" href="./image/computerlogo.png" type="image/x-icon">	 
   </head>
   <body>
   <header>
@@ -124,7 +123,7 @@ const generateTeamPage = function (employeeCards) {
       <div class="container">
           <div class="row">
               <div class="col-12 justify-content-center">
-            //   cards
+           
              ${employeeCards}   
           </div>
       </div>

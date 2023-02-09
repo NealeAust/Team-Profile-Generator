@@ -7,11 +7,13 @@ header {
     justify-content: center;
 }
 
+/* class selector */
 .navbar {
     background-color: #060680;
     height: 80px;
     margin: 40px;
     color: white;
+    letter-spacing: 2px;
     text-shadow: 2px 2px #99cdea;
     Width: 76%;
     height: 100px;
@@ -23,13 +25,14 @@ header {
     text-align: center;
 }
 
+/* Cards format & how displayed */
 .card {
     display: inline-block;
     flex-wrap: wrap;
     width: 400px;
     margin: 10px 10px;
 }
-
+/* Cards styling details */
 .card-header {
     background-color: #4857c8;
     color: white;
@@ -44,6 +47,7 @@ header {
     font-weight: 400;
 }
 
+/* Styling properties for fields in card body */
 li {
     height: 40px;
 }

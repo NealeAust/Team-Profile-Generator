@@ -10,6 +10,7 @@ To build a Node.js command-line application that takes in information entered us
 
 The following video shows the user flow through the application. This includes all prompts.
 
+https://drive.google.com/file/d/1sSSIo6FTCHss7lQk-kkpHc-ieK-AZs2g/view
 
 
 ## Packages Used
